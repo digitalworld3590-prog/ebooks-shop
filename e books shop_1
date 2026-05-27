@@ -1,0 +1,414 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Domina o Teu Tempo</title>
+
+    <meta
+      name="description"
+      content="Ebook premium sobre produtividade e foco."
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+    import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+export default function App() {
+  return (
+    <div className="app">
+      <header className="navbar">
+        <div className="logo">
+          Domina o Teu Tempo
+        </div>
+
+        <a href="#comprar">
+          <button className="nav-button">
+            Comprar
+          </button>
+        </a>
+      </header>
+
+      <section className="hero">
+        <div className="hero-left">
+          <div className="badge">
+            Ebook Premium • 14.99€
+          </div>
+
+          <h1>
+            Aprende a dominar
+            o teu tempo e aumentar
+            produtividade.
+          </h1>
+
+          <p>
+            Estratégias práticas de foco,
+            organização e execução para resultados reais.
+          </p>
+
+          <div className="hero-buttons">
+            <a href="#comprar">
+              <button className="primary-button">
+                Comprar Agora
+              </button>
+            </a>
+
+            <a href="#sobre">
+              <button className="secondary-button">
+                Saber Mais
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-right">
+          <div className="ebook-card">
+            <span>Pedro Soares</span>
+
+            <h2>
+              DOMINA
+              <br />
+              O TEU
+              <br />
+              TEMPO
+            </h2>
+
+            <p>
+              Foco, Organização
+              e Execução.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="features">
+        <div className="feature-card">
+          <h3>Mais Foco</h3>
+
+          <p>
+            Aprende a eliminar distrações e melhorar concentração.
+          </p>
+        </div>
+
+        <div className="feature-card">
+          <h3>Organização</h3>
+
+          <p>
+            Sistemas simples para gerir melhor o teu dia.
+          </p>
+        </div>
+
+        <div className="feature-card">
+          <h3>Resultados</h3>
+
+          <p>
+            Técnicas práticas para aumentar produtividade.
+          </p>
+        </div>
+      </section>
+
+      <section className="learn" id="sobre">
+        <h2>O Que Vais Aprender</h2>
+
+        <div className="learn-grid">
+          <div>✔ Método Pomodoro</div>
+          <div>✔ Gestão de foco</div>
+          <div>✔ Como evitar procrastinação</div>
+          <div>✔ Organização eficiente</div>
+          <div>✔ Gestão de energia</div>
+          <div>✔ Hábitos produtivos</div>
+        </div>
+      </section>
+
+      <section className="reviews">
+        <h2>Feedback dos Leitores</h2>
+
+        <div className="reviews-grid">
+          <div className="review-card">
+            <p>
+              “Muito profissional e fácil de aplicar.”
+            </p>
+
+            <span>— Miguel</span>
+          </div>
+
+          <div className="review-card">
+            <p>
+              “Consegui melhorar bastante a minha organização.”
+            </p>
+
+            <span>— Joana</span>
+          </div>
+
+          <div className="review-card">
+            <p>
+              “Melhor do que esperava.”
+            </p>
+
+            <span>— Ricardo</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta" id="comprar">
+        <h2>
+          Compra Agora
+        </h2>
+
+        <p>
+          Download imediato após pagamento.
+        </p>
+
+        <button className="buy-button">
+          Comprar por 14.99€
+        </button>
+      </section>
+
+      <footer>
+        © 2026 Domina o Teu Tempo
+      </footer>
+    </div>
+  )
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0f19;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  width: 100%;
+  padding: 28px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba(11,15,25,0.9);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-button {
+  background: white;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 18px;
+  background: rgba(124,58,237,0.15);
+  color: #a78bfa;
+  border-radius: 999px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 72px;
+  line-height: 1.05;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  color: #9ca3af;
+  font-size: 22px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  background: linear-gradient(135deg,#7c3aed,#2563eb);
+  color: white;
+  padding: 18px 34px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.secondary-button {
+  background: rgba(255,255,255,0.05);
+  color: white;
+  padding: 18px 34px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ebook-card {
+  width: 340px;
+  height: 500px;
+  background: linear-gradient(135deg,#7c3aed,#2563eb);
+  border-radius: 30px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 25px 80px rgba(124,58,237,0.4);
+}
+
+.ebook-card h2 {
+  font-size: 58px;
+  line-height: 0.95;
+}
+
+.features {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 28px;
+}
+
+.learn {
+  padding: 120px 8%;
+}
+
+.learn h2 {
+  font-size: 52px;
+  margin-bottom: 50px;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+}
+
+.learn-grid div {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 26px;
+  border-radius: 20px;
+}
+
+.reviews {
+  padding: 120px 8%;
+}
+
+.reviews h2 {
+  font-size: 52px;
+  margin-bottom: 50px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+}
+
+.review-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 28px;
+}
+
+.review-card p {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.cta {
+  padding: 120px 8%;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: #9ca3af;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.buy-button {
+  background: white;
+  color: black;
+  padding: 22px 44px;
+  border-radius: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+}
+  </body>
+</html>
